@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Path Element</title>
+</head>
+<body>
+    <!-- A file path can be considered like an unique location for a file or folder in the computer. Just like real-world, if a person needs a particular house or
+     location, then we tell them the full address. In other words, we tell them the correct path to follow.-->
+    <!-- The file path can direct someone to a file or folder. We have the root that is the starting point on the computer file system, for example, the hard drive C.
+     We can direct the computer to a specific file using the file path. Keep in mind that we have two types of path: Absolute and Relative. -->
+    <!-- An Absolute File Path is a file path that is relative to the root of the computer (hard drive) and then we can use the file path to direct an specific location using the absolute path. -->
+    <!-- An example of the Absolute File Path: C:/Project/Images/cat.png. This type of path is useful when we are navigating on a computer. Because no matter where your are currently,
+     within the file structure, we can be in the project folder, we can be in the index.html we can be at any part of the computer, we can always tell the absolute file path,
+     and the computer will know how to go from the beginning into the destination that we specify.-->
+
+     <!-- A Relative File Path is a file path that is relative to the current working directory (not from the root). This type of path is useful when we are navigating within a project or folder and then we change the
+      path of the project folder, in this case, the folder path changed but the relative path did not. For example, if we are in the project folder and we want to access the images folder, we can use the relative file path: ./Images/cat.png. 
+      therefore if we change the project folder to a new path, we can still access the images folder within the project folder because is relative to the current directory (project). -->
+
+    <!-- We also have special characters that will make our job easier, one of them is the double-dots and it means to go up a level, and then to the specific resource. On the other hand, we have the single-dot
+     this character allows us to navigate within the current directory. -->
+
+    <h1>All the animals</h1>
+    <h2>Rabbit:</h2>
+    <img src="./Folder0/rabbit.png" alt="A Rabbit Image">
+    <h2>Cat:</h2>
+    <img src="./Folder0/Folder3/cat.png" alt="A Cat Image">
+    <h2>Dog:</h2>
+    <img src="../dog.png" alt="A Dog Image">
+    <h2>Fish:</h2>
+    <img src="./Folder1/fish.png" alt="A Fish Image">
+    <h2>Bird:</h2>
+    <img src="./Folder1/Folder2/bird.png" alt="A Bird Image">
+     
+</body>
+</html>

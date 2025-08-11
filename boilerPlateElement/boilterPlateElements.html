@@ -1,0 +1,36 @@
+<!--The boilerplate is something that we usually start with when we create any html file. At the top of the HTML file it should be doctype declaration. It tells the browser which version of HTML
+the file was written in. The latest version is HTML 5.-->
+<!DOCTYPE html>
+
+<!--Now we have the root of the document, it means everything else any other element no matter if its a h1 or image or link, it's all going to go inside the opening and closing tag of
+the HTML element. And this attribbute where it says lang means the language of the text content in that element. Its an important feature for users that require the use of screen readers.-->
+<html lang="en">
+    <head>
+        <!--The head element is where we put all the metadata about the document, in other words, we put the important information about our website. The data is not going to be displayed to the user.
+        It doesn't show up on the page, but it tells the browser and search engines important information about the document. It includes things that help the website render in the brower correctly.
+        But it does not include content like text or images etc.-->
+
+        <!-- The meta tag sets the encoding of the web page, in this case, its set to UTF-8. It ensures that the characters that we are using on our website gets displayed correctly. 
+        For example, in certain character sets, it wont allow emojis to render, in other character sets they wont have certain symbols like multiplication and division symbols.-->
+        <meta charset="UTF-8">
+
+        <!--The viewport defines how a website should be displayed relative to the screen that is rendered on.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--The title element is where we put the title of the document. This is what shows up in the browser tab and in search engine results.-->
+        <title>Boilerplate Elements</title>
+        
+        <!--The link element is used to link to external resources, like stylesheets. In this case, we're linking to a stylesheet called styles.css. This is where we can put our CSS styles for the document.-->
+        <link rel="stylesheet" href="styles.css">   
+        
+    </head>
+
+    <body>
+        <!--The body element is where we put the content of the document. This is what shows up on the page.-->
+        <h1>Boilerplate Elements</h1>
+        <p>This is a paragraph inside the body element.</p>
+        
+        <!--The script element is used to link to external JavaScript files. In this case, we're linking to a script called script.js. This is where we can put our JavaScript code for the document.-->
+        <script src="script.js"></script>
+    </body>
+</html>

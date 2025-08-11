@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor Element</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="list-element">
+        <h2 class="element-title">Anchor Element</h2>
+        <p class="element-description">This is a description of the anchor element.</p>
+    </div>
+
+    <!-- The anchor element and attributes, thanks to this element we can create hypertext links. Like the other elements, we have the opening tag and the closing tag
+    keep in mind that just writing the tags and the content does not create automatically an hyper link like the following example: "<a>This does not have a link</a>"-->
+
+    <!-- To create a link we need to use the href attribute, which stands for "hypertext reference", this attribute is used to specify the URL of the page the link goes to.
+    The href attribute can be used with both absolute and relative URLs. An absolute URL is a complete web address, while a relative URL is a path relative to the current page.-->
+
+    <!-- Example of an anchor element with an absolute URL -->
+    <a href="https://www.google.com">This is a link</a>
+    <!-- Notice that we need the attribute "href" in order to use the link and it will always be located on the opening tag just afeter the name of the tag.-->
+    <!-- An attribute adds additional information to any HTML element, in this case, where this link should link to. 
+    The way we structure an attribute look like this: <tag attribute=value> Content </tag> 
+    Keep in mind that we can have as many attributes as we want and all we need to do is to separate them using a space and that all of them are within the opening tag.-->
+
+    <!-- On the other hand, we also have global attributes that applies to any HTML element. Therefore we have 2 types of attributes: the ones for an exclusive element and the global ones-->
+
+    <h1>My top 5 favorite Websites</h1>
+    <ol reversed start="5" type="I">
+        <li>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </li>
+        <li>
+            <a href="https://www.reddit.com" target="_blank" rel="noopener noreferrer">Reddit</a>
+        </li>
+        <li>
+            <a href="https://www.stackoverflow.com" target="_blank" rel="noopener noreferrer">Stack Overflow</a>
+        </li>
+        <li>
+            <a href="https://www.twitch.tv/" target="_blank" rel="noopener noreferrer">Twitch</a>
+        </li>
+        <li>
+            <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </li>
+    </ol>
+
+    <!-- Notice that we used the "target" attribute to specify that the URL will be opened on a new tab. On the other hand we also have the "rel" attribute
+     we have two values "noopener" and "noreferrer", where the first one instructs the browser to navigate to the target resource without granting the new browsing context access to the document that opened it
+     while the other value instructs the browser, when navigating to the target resource, to omit the Referer header and otherwise leak no referrer information-->
+
+     <!--In other words, "noopener" tells the browser to not grant any permissions (secure), for example, the url of a website we cannot control can redirect to another website.
+     On the other hand, "noreferrer" tall the browser to not send any information about our origin (secure), for example, it does not allow the new website to know
+     where you came from.-->
+
+</body>
+
+</html>

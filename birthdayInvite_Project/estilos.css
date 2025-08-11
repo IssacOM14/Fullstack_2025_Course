@@ -1,0 +1,40 @@
+body {
+    background-color: #f0f8ff; /* Color de fondo */
+    overflow: hidden; /* Oculta los globos que salen de la pantalla */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Los globos comienzan en la parte inferior */
+}
+
+.globo-contenedor {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.globo {
+    font-size: 50px;
+    position: absolute;
+    bottom: -100px; /* Inicia el globo debajo de la pantalla */
+    animation: flotar 10s infinite; /* Aplica la animación */
+}
+
+/* Define la animación de flotar */
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh); /* Sube el globo fuera de la vista */
+        opacity: 0;
+    }
+}
+
+/* Para darle a cada globo un movimiento único, se puede ajustar el delay */
+.globo:nth-child(2) { animation-delay: 2s; left: 15%; }
+.globo:nth-child(3) { animation-delay: 4s; left: 40%; }
+.globo:nth-child(4) { animation-delay: 6s; left: 65%; }
+.globo:nth-child(5) { animation-delay: 8s; left: 80%; }
