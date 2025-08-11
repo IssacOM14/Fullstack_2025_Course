@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Element: Nesting and Indentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="list-element">
+        <h1 class="element-title">List Element Nesting and Indetation</h1>
+        <p class="element-description">This is a description of the list elements and nesting</p>
+    </div>
+
+    <!-- We saw that we could already nest the list element inside an unordered list but we can actually nest a list inside another list. In this case, we have
+     a list that starts, then, we have another list with their respective opening tag and closing tag. -->
+    <!-- When the code is rendered, we have the "main" list and then the second list that starts from a bullet point or numbered item. In order to do this, we have
+     the following code as example -->
+
+    <ul>
+        <li>Unorder list number 1: Item 1</li>
+        <li>Unorder list number 1: Item 2
+            <ul>
+                <li>Unorder list number 2: Item 1</li>
+                <li>Unorder list number 2: Item 2</li>
+                <li>Unorder list number 2: Item 3</li>
+            </ul>
+        </li>
+        <li>Unorder list number 1: Item 3</li>
+    </ul>
+
+    <!-- Notice that instead of having one line item on the "Unorder list number 1: Item 2", we embedded an entire unordered list. We write the text of the list item
+     then after the text we embed another unordered list. This is called a Nested List.-->
+    <!-- We can also do the same with an ordered list, so we have the same structure but with the "ol" tag instead of the "ul" tag. All of these needs something called
+     indentation, the code is cleaner and undestandable. For example, if we have a tree nested list it will be dificult to read without indentation. -->
+    <!--Exercise-->
+
+    <ul>
+        <li>A</li>
+        <li>B 
+
+            <ol>
+                <li>B1</li>
+                <li>B2
+
+                    <ul>
+                        <li>B2a
+
+                            <ul>
+                                <li>B2aa</li>
+                                <li>B2ab</li>
+                            </ul>
+                            
+                        </li>
+                        <li>B2b</li>
+                        <li>B2c</li>
+                    </ul>
+
+                </li>
+                <li>B3
+
+                    <ol>
+                        <li>B31</li>
+                        <li>B32</li>
+                        <li>B33</li>
+                    </ol>
+
+                </li>
+            </ol>
+
+        </li>
+        <li>C</li>
+    </ul>
+
+
+
+</body>
+
+</html>
