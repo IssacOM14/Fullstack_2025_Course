@@ -1,0 +1,47 @@
+/* Box Model where we can see the different elements from the Box Model such as the content, padding, border and margin along with height and width.
+
+When we create a website, the box model is a fundamental concept that helps us understand how elements are structured and how they interact with each other. 
+The box model consists of four main components: content, padding, border, and margin. In the html document we have different elements and each of them its a box itself. 
+That that invisible box around the element will describes how it will be layout on the screen.
+
+The width and height properties are used to set the dimensions of the content area of an element. We can use pixels (px), percentages (%).
+
+*/
+
+/* Then we have the border of our box, that can have a total of 3 values each one separated by a space. The first one is the thickness of the border with a pixel value. The second item
+is the style of the border, we can have solid or dashed, we have more types. Finally, we have the color of the border. Together determined how the border should look like.
+
+Now, if we apply the border, we can notice that the box size does not change, this is because the border is outside of the content area. On the other hand, we have more rules that we can apply to the border
+such as border-top, border-bottom, border-left and border-right. Each of them will apply the border only to that side of the box. 
+
+border: 35px solid black;
+border-top: 10px dashed red;
+
+Keep in mind that we need to add any of these rules after the first border rule, otherwise it will be overwritten. We can also use border-width that works similarly to the border rule but only for the thickness of the border.
+
+With border-width we can also set different values for each side of the box, we just need to separate them with a space. The first value is for the top border, the second one is for the right border, the third one is for the bottom border and the last one is for the left border.
+like this:
+    border-width: 10px 5px 20px 15px;
+
+We can only use 2 values, the first one will be for the top and bottom border, and the second one for the left and right border. For example:
+    border-width: 10px 5px;
+
+Lets move on to padding, the padding is the space between the content and the border. We can use padding to create some space around the content inside the box. Keep in mind that the width and height of the box does not change.
+    padding: 20px;
+
+We can also use padding-top, padding-bottom, padding-left and padding-right to apply padding only to that side of the box. Just like with border, we need to add these rules after the first padding rule.
+
+Finally, we have the margin, the margin is the space outside of the border. We can use margin to create some space between the box and other elements on the page. The width and height of the box does not change.
+    margin: 30px;
+
+As a side note the margin and the padding have 4 values that we can use to set different values for each side of the box. The first value is for the top, the second one is for the right, the third one is for the bottom and the last one is for the left.
+Also, we can use 2 values, the first one will be for the top and bottom, and the second one for the left and right.
+*/
+
+/*We group different elements so we can style them all together. Or maybe we can layout them. For example, we can wrapped a box around different elements, in order to do that, we use an html element called Content Division Element. 
+The <div> element is a block-level element that is used to group other elements together. It does not have any semantic meaning, but it is useful for applying styles and layouts to a group of elements. It is invisible by default, but we can add a border to see it.
+
+The whole purpose of the div element is to group other elements together, so we can apply styles and layouts to them. For example, we can use a div element to group a heading and a paragraph together, and then apply a border to the div element to create a box around the heading and paragraph.
+Between the opening <div> and closing </div> tags, we can add any other html elements we want, such as headings, paragraphs, images, etc.
+
+*/
