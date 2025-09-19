@@ -1,0 +1,34 @@
+/* In CSS we have the "named colors" and they have a lot of them, like Royal Blue etc, all the names are listed on the documentation. The syntax is simple, we just use the name of the color
+therefore we can copy the name and paste it as the value of the color property. What if we need an specific color? We can use website like colorhunt or colorpicker 
+to pick a color and get the HEX code or RGB code. In fact, if we are into the UX/UI design, we will be using these codes more often than the named colors and some of these 
+websites have the color palettes that we can use for our projects.
+We can represent the value of the color property in 3 different ways:
+1. Named colors
+2. HEX code
+3. RGB code
+We can also use HSL code but it's not that common.
+
+In code we have the following examples:
+
+h1 {
+    color: red; Named color 
+    background-color: #3498db; HEX code 
+    border: 2px solid rgb(46, 204, 113); RGB code 
+}  
+
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: antiquewhite; /* name color */
+}
+
+h1 {
+    color: rgb(245, 245, 245); /* RGB code */
+    background-color: darkseagreen; /* name color */
+}
+
+h2 {
+    color: #faf8f1; /* HEX code */
+    background-color: #C58940; /* HEX color */
+}
