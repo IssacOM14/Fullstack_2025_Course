@@ -1,0 +1,37 @@
+CSS selectors will help us where to apply our CSS. We known that CSS rules can be created with the simply version of creating a property and a value. Something like this: 
+
+color: blue;
+
+This rules will be inside a CSS selector. Its basically the part that selects the HTML in order to apply wichever rules go in between the {}. For example:
+
+h1{
+    color: blue;
+}
+
+Based on the previous example, we known that we are targeting the h1 tag. This is the simpliest way of a selector in CSS, called an Element Selector. It selects all the h1's in the HTML document.
+Keep in mind that if the HTML document has other tags like the paragraph or anchor, they will not be affected by this selector. In order to do that we will need to defined the selector for each tag.
+
+Then, we have a Class Selector, a different type of selector compared to the previous one. For example, we have:
+
+.red-heading{
+    color: red
+}
+
+As we can see, we need a special symbol for this type of selector, which is the dot "." then we have the name of the class without any spaces. Finally, we have the same CSS rule.
+A class is something we can add as an attribute to any HTML element and it should look like this:
+
+<h2 class="red-heading"> RED HEADING CONTENT </h2>
+
+Its used for grouping elements in the HTML to apply the CSS rule to all of them. Keep in mind that they should be written in the same way. In other words, if we have "red-heading" in the
+CSS file but we write "red-Heading" in the HTML file, it wont work. 
+
+But what if we apply the class to different HTML elements? It will work, no matter what. For example:
+
+<h2 class="red-text"> THIS IS A HEADING </h2>
+<p class="red-text"> THIS IS A PARAGRAPH </p>
+
+Both of them are different elements but they have the same class, therefore, when the browser renders the file, both of them will have the same style defined in the CSS file.
+As we can see, it useful in multipage wesites with a lot of different elements and we dont want to select a particular type of html element.
+
+The next one is called ID selector, in this case instead of a dot '.' we use a hashtag '#'
+

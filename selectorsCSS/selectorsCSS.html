@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--The following code is for the Element Selector-->
+    <h1>Selectors CSS</h1>
+    <h1>No matter what header I use if we have the element Selector, all of these elements (in this case the H1) will have the same style.</h1>
+    <h2>In this case, this is a H2 element, so it does not have the style defined in h1.</h2>
+    
+    <hr>
+    
+    <!--The following code is for the Class Selector-->
+    <h2 class="red-text">This is a H2 element with a class selector.</h2>
+    <p class="red-text">This is a paragraph element with a class selector. Notice that the previous h2 does not have the same style as the other one. Because we did not defined the class in the HTML file.</p>
+
+    <hr>
+
+    <!--The following code is for the ID Selector-->
+    <h3 id="unique-element">This is a H3 element with an ID selector.</h3>
+    <p id="unique-element">This is a paragraph element with the same ID selector. Notice that the previous h3 does not have the same style as the h2. 
+    Keep in mind that while you can apply the same ID to multiple elements in HTML and CSS will often apply the styles defined for that ID to all of them, this practice is invalid HTML and strongly discouraged.
+    </p>
+    
+    <hr>
+
+    <!--The following code is for the Attribute Selector-->
+    <p draggable="true">This is a paragraph element with the draggable attribute set to true. This means that you can drag this element around the page.</p>
+    <p>This is a paragraph element without the draggable attribute. This means that you cannot drag this element around the page.</p>
+    <p>The first paragraph will have the CSS styled because it has the attribute "draggable".</p>
+
+    <hr>
+
+    <!--The following code is for the Universal Selector-->
+    <p>This is a paragraph element. It will have the universal selector style and this also applies to all the element within the HTML file. The style is the margin.</p>
+
+    <!--As a final note, we can have multiple elements with the attributes of "class", "id" or "value" which can be considered an attribute.-->
+
+    <ol>
+        <li class="note">This is a list item with a class selector.</li>
+        <li class="note" id="id-selector-demo" value="3">This is a list item with an ID selector.</li>
+        <li class="note" value="4">This is another list item with the same ID selector.</li>
+        <li class="note" value="5">This is a list item with a value attribute set to 5.</li>
+    </ol>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* The following one is for the element selector*/
+h1{
+    color: blue;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* The following one is for the class selector. We need to make sure to use the same name on the HTML file, otherwise it will not work. A class is something that we can add as an attribute
+this attribute can be added to any HTML element. Is like a label that we can use to identify an element or group of elements. Grouping elements with the same class is useful when we want to apply the same style to multiple elements.
+*/
+.red-text{
+    color: red;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* The following one is for the ID selector. We need to make sure to use the same name on the HTML file, otherwise it will not work. An ID is something that we can add as an attribute
+this attribute can be added to any HTML element. An ID should be unique, meaning that we should not use the same ID for multiple elements. This is useful when we want to apply a style to a specific element.
+
+While you can apply the same ID to multiple elements in HTML and CSS will often apply the styles defined for that ID to all of them, this practice is invalid HTML and strongly discouraged.
+Using the same ID for multiple elements can lead to unexpected behavior, especially when using JavaScript to manipulate the DOM, as methods like getElementById() will only return the first element with that ID.
+To ensure valid HTML and avoid potential issues, it's best to use unique IDs for each element.
+*/
+#unique-element{
+    color: green;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* The following one is for the attribute selector. We know that we can add a lot of different attributes to the HTML tags. 
+We can select this elements with particular attribute and apply a style to them. In this case we are selecting all the input elements with the type attribute set to text.
+Example:
+p[draggable="true"]{
+    border: 2px solid black;
+}
+
+Notice that in this case we are selecting all the p elements with the draggable attribute set to true and applying a border to them. 
+This means that we are telling the browser to apply a border to all the p elements that have the draggable attribute set to true. 
+On the other hand, it will not apply the border to the p elements that do not have the draggable attribute or have it set to false.
+
+In other words, we can simply use the attribute with or without a value. This also known as CSS specificity. 
+If we have only defined the attribute "draggable" without a value, it will apply the style to all the p elements that have the draggable attribute regardless of its value.
+*/
+p[draggable="true"]{
+    border: 2px solid black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+
+/* The following one is for the universal selector. This selector selects all the elements in the HTML file and applies the style to them.
+This is useful when we want to apply a style to all the elements in the HTML file. We just need to use the asterisk (*) symbol.
+*/  
+
+*{
+    margin: 50px;
+    box-sizing: border-box;
+}
+
+
+/* Simple exercise: Create a CSS file that uses all the selectors mentioned above. */
+
+.note{
+    font-size: 60px;
+}
+
+#id-selector-demo{
+    color: orange;
+}
+
+li[value="4"]{
+    font-weight: bold;
+    color: purple;
+}
+
+ol{
+    background-color: lightgray;
+    list-style-position: inside;
+}
+
