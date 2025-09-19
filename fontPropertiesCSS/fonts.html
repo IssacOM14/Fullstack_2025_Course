@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cossette+Texte:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    <!--In this document we will see the font properties that we can apply to our html document with the CSS file. Some of them are the font-weight, the font-size and the fort-family.-->
+
+    <p id="pixel">1 Pixel is 1/96 of an Inch.</p>
+    <p id="point">1 Point is 1/72 of an Inch.</p>
+    <hr>
+
+    <div class="container">
+
+        <p id="rem">1rem is 100% the size of the root element. In this case is xx-large.</p>
+        <p id="em">1em is 100% the size of the parent element, the class container. In this case is 32pt.</p>
+        <hr>
+
+        <div id="em-half">
+            <p>This div has the 0.5 size of the div with the class container, that is 32pt. So, we have 16pt for this text.</p>
+            <p id="point-16">This text has the same font-size but instead of using the em, we are using the fixed value of 16pt. Notice that is the same size as the previous text.</p>
+            <hr>
+
+            <div id="em-half">
+                <p>This div has the 0.25 size of the div with the class container, that is 32pt. So, we have 8pt for this text because this div is nested inside another half. 
+                So we can say, that using the em nested takes the value of the previous parent element, in this case, it was the previous div.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

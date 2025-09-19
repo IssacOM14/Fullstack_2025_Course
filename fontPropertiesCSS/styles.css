@@ -1,0 +1,99 @@
+/* 
+Lets talk about the font size property in CSS, we have the property font-size and then the values that we can assign to it. 
+We can use the pixel size, em size, rem size, percentage size, and also keywords like small, medium, large, etc. So, how do we know which one to use?
+
+The pixel size is an absolute size, meaning it will always be the same regardless of the user's settings. This can be useful for headings or other elements that need to be a specific size. 
+However, it can also make your website less accessible for users with visual impairments who may need to increase the font size.
+
+The em size is a relative size, meaning it is based on the font size of the parent element. 
+For example, if the parent element has a font size of 16px and you set the child element to 1.5em, the child element will have a font size of 24px (16px * 1.5). 
+This can be useful for creating a consistent hierarchy of font sizes throughout your website.
+
+The rem size is similar to em, but it is based on the root element (usually the html element) instead of the parent element. 
+This can be useful for creating a consistent font size across your entire website, regardless of the nesting of elements.
+
+The percentage size is also a relative size, but it is based on the font size of the parent element as well. 
+For example, if the parent element has a font size of 16px and you set the child element to 150%, the child element will have a font size of 24px (16px * 1.5).
+This can be useful for creating a consistent hierarchy of font sizes throughout your website, similar to em
+
+The keywords like small, medium, large, etc. are predefined sizes that can be useful for quickly setting a font size without having to think about the specific size.
+However, they can be less precise and may not always fit the design of your website.
+
+Therefore, we can say the following:
+1. Use relative sizes (em, rem, percentage) for most text to ensure accessibility and scalability.
+2. Use absolute sizes (pixels) for specific elements that require a fixed size, like headings or logos.
+
+REM for Scalable and Consistent Designs: Ideal for responsive designs where text and spacing scale consistently. Example: Setting font sizes, margins, and paddings.
+EM for Flexible Sizing Within Components: Useful for local adjustments like spacing inside buttons or cards. Example: Padding within a button scales based on its font size.
+PX for Precision and Pixel-Perfect Layouts: Best for elements that need exact dimensions, such as icons or borders. Example: Defining the size of an icon or a border width.
+
+Practical Tips for Using REM, EM, and PX
+- Start with a root font size of 16px, as most browsers default to this.
+- Use REM for global sizing (font sizes, spacing) to maintain consistency.
+- Use EM for local scaling within components like buttons or cards.
+- Reserve PX for small, fixed elements where precision matters, like borders or icon dimensions.
+- Avoid over-nesting EM to prevent unexpected scaling issues.
+
+Why Does Choosing the Right Unit Matter?
+- Accessibility: REM and EM make your design more adaptable to users who scale text sizes for better readability.
+- Responsiveness: Relative units like REM and EM ensure your design adapts well to different devices and screen sizes.
+- Maintainability: Using consistent units like REM simplifies updates to your design. For example, increasing the root font size scales the entire design proportionally.
+
+TLDR: Use REM for overall layout and font sizes, EM for component-specific adjustments, and PX for precise control over small elements. This approach balances scalability, flexibility, and precision in your designs.
+*/
+
+/* We also have something called a point, that is basically the same measurement system that we have in programs like word. */
+
+html{
+    font-size: xx-large; /* Setting a base font size for the entire document aka Root element*/
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+.container{ /* A container to hold all the text elements. In other words, its the parent element*/
+    font-size: 32pt; /* Setting font size using points */
+    text-align: end;
+}
+
+#rem{
+    font-size: 1rem;
+}
+
+#em{
+    font-size: 1em;
+}
+
+#em-half{
+    font-size: 0.5em;
+    text-align: initial;
+}
+
+#pixel{
+    font-size: 20px;
+}
+
+#point{
+    font-size: 20pt;
+}
+
+#point-16{
+    font-size: 16pt;
+}
+
+
+/* We have also some properties such as font weight. We have for example, old but we actually have more than that, like the ones from keywords, such as normal/bold.
+Then we have the ones relative to Parent such as lighter/bolder and finally, the ones from numbers from 100 to 900. Keep in mind that lighter reduces the value -100 and bolder add value +100.*/
+
+
+/* Finally, we have the font family that determines how the text would look like. When we define the font-family we need the Mac Type and a Windows Type, therefore, we have more than one family.
+With that being said, we also have generic families such as serif, sans-serif, monospace, cursive and fantasy. Keep in mind that if the browser does not support the first font, it will go to the next one and so on.
+
+We use commas to separate the different font families. If a font family has more than one word, we need to use quotes. We can get the font families from Google Fonts or other similar websites.
+https://fonts.google.com/
+
+*/
+
+
+/*Finally, we have the Text Alignment, that has the values such as center, left or right. We also have values of start or end.  */
