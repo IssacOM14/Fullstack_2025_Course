@@ -1,0 +1,61 @@
+In order to add a CSS file into our HTML we have 3 ways. One of them is called inline, the other is called internal and the third one is external. 
+
+The first one looks like this: <tag style="css" />
+The second one looks like the following: <style>css</style>
+The last one is: <link href="style.css"/>
+
+Inline style of adding css it goes in the same line as a HTML element. It looks like the following element of the boilerPlate <html style="background: blue"></html>. The CSS looks like
+this: we have a style attriute globally to other tags like image tags. The name of the attribute then the "=" and finally the value of the attribute. In this value we can add the CSS.
+
+In this tag: <html style="background: blue"></html> we can see that the style can be in any tags. Which is the name of the attribute, followed by the equal sign and then the value.
+In this case "background" is the property that we want to change and the second part is the value of the property "blue". Therefore, we can say that the tag <html style="background: blue">
+is changing the background color of our website to blue. All of this, is an example of Inline CSS and its useful when we want to add a CSS style to a SINGLE element to our HTML element. Its not recommended to this in every element.
+
+The second way is Internal CSS using a special element in HTML called the style tag. It should look like this:
+
+<html>
+    <head>
+        <style>
+            html{
+                background: red;
+            }
+        </style>
+    </head>
+</html>
+
+Where
+
+        <style>
+            html{
+                background: red;
+            }
+        </style>
+
+Is all our CSS, and it looks different from the Inline, where the style was inside the html tag. The internal can apply anywhere within the html document. It can be inside the element like the 
+head, the body etc. But we need a selector inside the {} like {background: red;}. Inside the style we have the targets aka, the selector. This type of CSS is useful when we have only one html document.
+Therefore, we can say that this style is not the best in case that we have a multipage html. To fixed this, we need the External CSS
+
+The external CSS is a completely different element that has the .CSS extension. Inside it we have the CSS rules, like property values etc. The external version looks like this:
+
+<html>
+    <head>
+        <link
+            rel="stylesheet"
+            href="./style.css"
+        />
+    </head>
+</html>
+
+As we can see it is a self-closing tag and it will always be on the head, not in the body of the html document. Keep in mind compared to the anchor element, we cannot nested any other elements with the link.
+On the other hand compared to the anchor element, the link element does not appeared on the front-end aka the user cannot see it. On the other hand, the CSS file is linked using this tag
+and inside it, we can add the style like this:
+
+html{
+    background: green;
+}
+
+In summary, the Inline version is useful when we want to target a single element. Internal is useful when we want to target a single webpage. But for most cases, when we have multipages, we need to use the External way through use of an external file.
+
+
+
+

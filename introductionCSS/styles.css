@@ -1,0 +1,12 @@
+body{
+    background-color: blueviolet;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fcfcfc;
+}
+
+a{
+    color: #fcfcfc;
+    text-decoration: none;
+}
