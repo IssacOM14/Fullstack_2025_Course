@@ -1,0 +1,104 @@
+/*
+
+Let's say we have a single target but we use multiple selectors to style it. For example, we have an <h1> element with a class and an ID:
+<h1 id="unique-heading" class="red-heading">This is a heading</h1>
+In this case, the styles applied to the <h1> element will be determined by the specificity of the selectors used.
+The specificity hierarchy is as follows:
+1. Inline styles (highest specificity)
+2. ID selectors
+3. Class selectors, attribute selectors, and pseudo-classes
+4. Element selectors and pseudo-elements (lowest specificity)
+
+This way, we can say we are using a cascade of styles where the most specific rule takes precedence over the less specific ones. 
+
+Besides this specificity concept, we also have the inheritance concept in CSS. Inheritance is the mechanism by which certain properties applied to a parent element are passed down to its child elements. Not all CSS properties are inheritable, but many text-related properties like color, font-family, and line-height are.
+
+Overall we have four broad categories of how CSS can be applied to HTML elements:
+1. Position
+2. Specificity
+3. Type
+4. Importance
+
+For position, we just need to focus on where the CSS rule is defined. If there are multiple rules that apply to the same element, the one that is defined last in the CSS will take precedence.
+Example: 
+We have the following CSS rules:
+h1 {
+    color: blue;
+    color: red;
+}
+In this case, the <h1> element will be styled with the color red because it is defined last in the CSS. This principle also applies when we target the same element with multiple selectors.
+Example:
+h1 {
+    color: blue;
+}
+h1{
+    color: red;
+}
+In this case, the <h1> element will be styled with the color red because it is defined last in the CSS.
+
+Now, when we talk about the CSS specificity, we refered to how specific a selector is in terms of the elements that you are applying the CSS rule to. 
+Example:
+Let's say that we create a list item and we give it and ID that's equal to "first-id" and then we give it a class that is equal to "first-class", 
+and finally we give it the attribute of "draggable" like this:
+
+<li id="first-id" class="first-class" draggable="true"> Item 1 </li>
+
+In the CSS file, we have the following rules:
+li {
+    color: blue;
+}
+.first-class {
+    color: red;
+}
+li[draggable] {
+    color: purple;
+}
+#first-id {
+    color: orange;
+}
+
+All of these rules will target the same <li> element, but the one that will take precedence is the one with the highest specificity, 
+which is the ID selector (#first-id). Therefore, the <li> element will be styled with the color orange. As we saw previously, the specificity hierarchy is as follows:
+
+1. Element selectors (li) - lowest specificity. Keep in mind that this includes the fact that the rule selects all the li elements from our html file.
+2. Class selectors (.first-class) and attribute selectors (li[draggable]) - medium specificity. Both of these rules have the same level of specificity, so if they were the only ones. Since we can have multiple elements with the same class or attribute, they have a higher specificity than element selectors.
+3. Attribute selectors (li[draggable]) - medium specificity. We said that attribute selectors have the same level of specificity as class selectors. But when we see this in action, the attribute selector is more specific than the class selector because it targets elements with a specific attribute, which is less common than targeting elements with a specific class.
+4. ID selectors (#first-id) - highest specificity. Since IDs are unique to a single element, they have the highest specificity.
+
+
+Now, let's talk about the next category called "type". If we remember, we said that not all CSS properties are inheritable. For example, if we set the color property on a parent element, it will be inherited by its child elements. 
+However, if we set the margin property on a parent element, it will not be inherited by its child elements. We can apply a CSS style in three different ways:
+1. External CSS (using a separate .css file)
+2. Internal CSS (using a <style> tag within the HTML file)
+3. Inline CSS (using the style attribute within an HTML element)
+
+The order of precedence for these methods is as follows:
+1. Inline CSS (highest precedence) because it only targets a single element.
+2. Internal CSS because the internal stylesheet only exists inside that specific HTML file (one website).
+3. External CSS (lowest precedence) because it can be used across multiple HTML files (multiple websites).
+
+Finally, we have the "importance" category. This is where we can use the !important declaration to override any other styles that may be applied to an element.
+For example, if we have the following CSS rules:
+h1 {
+    color: blue !important;
+}
+h1 {
+    color: red;
+}
+In this case, the <h1> element will be styled with the color blue because the !important declaration takes precedence over other styles.
+
+*/
+
+
+li {
+    color: blue;
+}
+.first-class {
+    color: red;
+}
+li[draggable] {
+    color: purple;
+}
+#first-id {
+    color: orange;
+}
