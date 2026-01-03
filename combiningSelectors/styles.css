@@ -1,0 +1,60 @@
+/*
+Combining CSS Selectors
+===============================
+
+In CSS, you can combine multiple selectors to apply the same styles to different elements. This is done by separating the selectors with commas.
+
+
+Example:
+p{
+    color: yellow;
+    font-size: 16px;
+}
+.inner-box p {
+    color: white;
+    font-size: 16px;
+}
+In this case, both the <p> elements and the <p> elements inside the .inner-box class will have the same font size of 16px, but different colors.
+Keep in mind that we can also change the values for the font size or any other property as needed.
+
+Therefore, if we have different p elements, only the ones inside a div called "inner-box" will have a white color, while the rest will be yellow.
+
+We have different ways to combine selectors in CSS, such as:
+1. Grouping Selectors: Applying the same styles to multiple selectors. This can be achived by using a comma to separate the selectors.
+
+2. Child Selectors: Targeting elements that are direct children of a specific element. This can be achived by separating the selectors with a space and then use a righ angle bracket.
+For example: 
+    selector > selector {
+        property: value;
+    }
+Keep in mind that the parent selector is the one before the right angle bracket (the left one), while the child selector is the one after it. We can use the classes or ID for the parent and it only applies to the direct children of that parent element.
+
+3. Descendant Selectors: Targeting elements that are descendants of a specific element, regardless of their level in the hierarchy. This can be achived by separating the selectors with a space. 
+For example:
+    selector selector {
+        property: value;
+    }
+
+This means that our descendant selector is going to apply  to the descendent element as long as it has an ancestor element that matches the selector before the space.
+The selector from the left is the ancestor selector, while the one on the right is the descendant selector.
+
+4. Chaining Selectors: Combining multiple selectors to target specific elements. This can be achived by writing the selectors one after another without any spaces.
+Also, do not use a element after the class. For example:
+    .class#id {
+        property: value;
+    }
+This will target the element that has both the specified class and ID. And if we want to target a specific element with a class and ID, we can do it like this:
+    element.class#id {
+        property: value;
+    }
+Remember do not left any space between the element, class, and ID.
+
+Finally, we can combine these different types of selectors to create more specific rules for styling our HTML elements.
+
+For example, we can use the Descendant Selector with a Chaining Selector to target specific elements within a certain context.
+
+    selector selector.class {
+        property: value;
+    }
+This will apply the styles to elements with the specified class that are descendants of the specified ancestor element
+*/
