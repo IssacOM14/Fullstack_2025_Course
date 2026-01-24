@@ -1,0 +1,19 @@
+/*
+Another property for layout is the float property. 
+The float property can be used to place an element on the left or right side of its container,
+allowing text and inline elements to wrap around it.
+
+In other words, it wraps text around images or other elements using float and clear.
+A quick example is shown below:
+img {
+  float: left;
+  margin-right: 15px;
+}
+
+Now, we can also use the clear property to control the behavior of floating elements.
+p {
+  clear: both;
+}
+This will ensure that the paragraph starts below any floated elements above it.
+
+*/
