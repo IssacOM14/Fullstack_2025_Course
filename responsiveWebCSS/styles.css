@@ -1,0 +1,46 @@
+/*
+
+We want our website to look good on all devices, so we use responsive web design 
+techniques in this CSS file. 
+This includes flexible grid layouts, media queries, and fluid images to ensure that our content adapts seamlessly to different screen sizes and orientations.
+
+So when a user accesses our site from a mobile phone, tablet, or desktop computer, they have an optimal viewing experience.
+
+We have the four main ways to do this:
+1. Media Queries
+2. CSS Grid
+3. CSS Flexbox
+4. External Frameworks (like Bootstrap or Foundation)
+
+Example of Media Query:
+@media (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+In this case, when the screen width is 600 pixels or less, the background color of the body changes to light blue.
+
+With the CSS Grid is a little more difficult to understand, but here is a simple example:
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+In this example, the container will create a grid layout that automatically adjusts the number of columns based on the available space, with each column being at least 200 pixels wide.
+This ensures that the layout remains flexible and responsive across different screen sizes.
+
+
+Flexbox is another powerful layout module that allows for responsive design. Here’s a basic example:
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+In this example, the navbar will use flexbox to arrange its items. The flex-wrap property allows the items to wrap onto multiple lines if necessary, and justify-content ensures that there is space between the items.
+
+
+The main difference between Grid and Flexbox is that Grid is designed for two-dimensional layouts (both rows and columns), while Flexbox is intended for one-dimensional layouts (either a row or a column).
+Finally, we have external frameworks like Bootstrap or Foundation that provide pre-built responsive components and grid systems, making it easier to create responsive designs without writing all the CSS from scratch.
+The framework is not something that is build into CSS itself, but rather a collection of CSS and JavaScript files that you can include in your project.
+
+*/
