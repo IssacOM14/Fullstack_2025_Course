@@ -1,0 +1,48 @@
+/*
+As we know, the media query is used to apply different styles for different media types/devices.
+Here is an example of how to use media queries in CSS:
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+In that example, the breakpoint is set at a maximum width of 600 pixels (equal or less than). When the viewport width is 600 pixels or less, the background color of the body will change to light blue.
+We are pretty much doing an override of the existing styles for smaller screens to enhance the user experience on mobile devices.
+
+On the other hand, we have the min-width media query, which applies styles when the viewport width is greater than or equal to the specified value.
+Therefore, we are targeting larger screens, such as tablets and desktops.
+
+Another important feature is that we can combine multiple conditions in a single media query using logical operators like "and", "or", and "not".
+For example:
+@media (min-width: 600px) and (max-width: 1200px) {
+    We are targeting devices with viewport widths between 600 pixels and 1200 pixels.
+    body {
+        background-color: lightgreen;
+    }
+}
+
+In this example, the background color will change to light green when the viewport width is between 600 pixels and 1200 pixels.
+This allows us to create more specific styles for different screen sizes and improve the overall responsiveness of our web pages.
+
+We also have the screen orientation feature, which allows us to apply styles based on the device's orientation, either portrait or landscape.
+For example:
+@media screen (orientation: landscape) {
+    body {
+        font-size: 14px;
+    }
+}
+
+We dont use the screen keyword very often, but it is still good to know about it. 
+
+Instead, we have the word print, which is used when we want to apply styles specifically for printed documents.
+For example:
+@media print{
+    body {
+        font-size: 12pt;
+        color: black;
+        background: white;
+    }
+}
+In this example, when the user prints the webpage, the font size will be set to 12 points, the text color will be black, and the background will be white.  
+*/
