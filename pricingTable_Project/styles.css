@@ -1,0 +1,210 @@
+/*
+
+One of the most reliable tools is the float property. Float is great when we want to float an image to the left or the right of a block of text to wrap the
+text around it. But, do not use floats for layout purposes. Using floats for layout can lead to many problems, such as collapsing parent containers and
+unintended overlapping of elements. Instead we can use something else, like FlexBox, Grid, Bootstrap, or another CSS framework. Something that is designed for an overall page structure. Then, within these blocks
+we could continue to use floats for images and text wrapping. With flexbox, we can use the property display: flex; on a parent container to create a flexible layout structure.
+Keep in mind that using the property display: flex; we do not relay on the previous display properties like block, inline, or inline-block since it will be overridden.
+
+And essentially what happens when we declare something display: flex, is we give a little bit of the control to flexbox to manage the layout of the child 
+elements within that parent container. But we have all of these different modifiers and properties in order to tweak and adjust how those child elements are laid out.
+A div is by default a block-level element, but if we set the display property to flex, it will become a flex container and its children will become flex items. And the width 
+of each child element will adjust based on the flex properties we set on the parent container or on the child elements themselves. So it's going to try and let you have all
+of our content displayed in one line and it does not matter what type of element we have inside of that flex container (the width will be adjusted based on the content inside the child element if we dont set the flex properties ourselves).
+
+On the other hand, when we use the property display: flex on a container (div), it will have something like the block element. It will take up the full width of its parent container by default, but the child elements inside of it will be laid out in a flexible manner according to the flexbox rules.
+Thankfully, we also have other properties such as inline-flex, which behaves similarly to inline-block elements, therefore, the width of the div will be based on the content. Another pro tip is that we need to use rem instead of px for the properties like "gap" otherwise it will be fixed and not responsive. 
+
+
+Flex direction is a property that defines the direction of the main axis in a flex container. 
+The main axis is the primary axis along which flex items are laid out. By default, the main axis is horizontal, and the cross axis is vertical. However, we can change this using the flex-direction property.
+The flex-direction property can take the following values:
+- row (default): This value lays out the flex items horizontally from left to right.
+- row-reverse: This value lays out the flex items horizontally from right to left.
+- column: This value lays out the flex items vertically from top to bottom.
+- column-reverse: This value lays out the flex items vertically from bottom to top.
+
+If we dont define the flex-direction property, it will default to row, meaning the flex items will be laid out horizontally from left to right. But if change that to 
+column, the flex items will be stacked vertically from top to bottom and the cross axis will become horizontal and trhe main axis will be vertical. It is important to know all of this because 
+it is handy when we customize our Flexbox items. For example: Flex-basis.
+
+We also have the flex-basis property, which defines the initial size of a flex item before any available space is distributed according to the flex-grow and flex-shrink properties.
+The flex-basis property can take values such as auto, which means the size of the item is based on its content, or specific length values like pixels, percentages, etc.
+For example, if we have the flex-direction set to column the flex-basis will define the height of each flex item. 
+If we have the flex-direction set to row, the flex-basis will define the width of each flex item. Finally, we can say that we are flexing along the main axis defined by the flex-direction property.
+
+Flex-basis cannot be used on the flex container itself; it can only be applied to the flex items within the container.
+
+FLEX LAYOUT
+Now that we have seen that we can create a flexbox now we can set the flex-direction, and now the biggest topic of flexbox which is creating a layout. One of the first things to differentiate
+when we are talking about the different properties to set is: is this property going to go onto the child (flex-item)?
+
+In the previous html files we can see that we have items that are contained within the flexible container is a child or is the property going onto the parent (container)? 
+
+It is important when we are learning flexbox to really differentiate between these two things because if we set a property (for example, order) that is intended for the child 
+therefore on the parent selector this property (order) will not work. 
+
+The order property is used to control the order of flex items within a flex container. By default, flex items are laid out in the order they appear in the source code and by default, all flex items have an order value of 0. This means that they will be displayed in the order they are defined in the HTML.
+However, we can use the order property to change this order without modifying the HTML structure. The order property can take integer values, where lower values are displayed first. 
+For example, if we have three flex items with order values of 1, 2, and 3, they will be displayed in that order. If we change the order value of the second item to 0, it will be displayed before the first item.
+
+
+To change the order of the flex items, we can set the order property on each flex item. For example, if we have three flex items and we want to display them in a different order, we can set the order property as follows:
+.item1 {
+  order: 2;
+}
+.item2 {
+  order: 1;
+}
+.item3 {
+  order: 3;
+}
+In this example, item2 will be displayed first, followed by item1 and then item3. The order property allows us to rearrange the flex items without changing the HTML structure, which can be very useful for responsive design and dynamic layouts.
+Remember the order goes the smallest number to the largest (negative numbers will be displayed before positive numbers) and from left to right. Also, if two items have the same order value, they will be displayed in the order they appear in the source code.
+
+Now, lets talk about flex-wrap property, useful when we run out of space in a flex container (it always will be set on the parent container). By default, flex items will try to fit into a single line, which can cause them to overflow the container if there are too many items or if the items are too large. 
+The flex-wrap property allows us to control whether the flex items should wrap onto multiple lines when necessary. The flex-wrap property can take the following values:
+
+- nowrap (default): This value prevents flex items from wrapping onto multiple lines. All flex items will be forced to fit into a single line, which may cause overflow if there are too many items or if the items are too large.
+- wrap: This value allows flex items to wrap onto multiple lines when necessary. If the items exceed the width of the container, they will wrap onto the next line. The flex items will be laid out in the order they appear in the source code, and the lines will be stacked vertically.
+- wrap-reverse: This value allows flex items to wrap onto multiple lines in reverse order. If the items exceed the width of the container, they will wrap onto the next line, but the lines will be stacked in reverse order (the last line will be at the top and the first line will be at the bottom).
+
+Moving on to the justify-content property, which is used to align flex items along the main axis of the flex container. The justify-content property can take the following values:
+- flex-start (default): This value aligns flex items to the start of the main axis. If the flex-direction is row, the items will be aligned to the left; if the flex-direction is column, the items will be aligned to the top.
+- flex-end: This value aligns flex items to the end of the main axis. If the flex-direction is row, the items will be aligned to the right; if the flex-direction is column, the items will be aligned to the bottom.
+- center: This value centers flex items along the main axis. If the flex-direction is row, the items will be centered horizontally; if the flex-direction is column, the items will be centered vertically.
+- space-between: This value distributes flex items evenly along the main axis, with the first item at the start and the last item at the end. The remaining space between the items is distributed evenly.
+- space-around: This value distributes flex items evenly along the main axis, with equal space around each item. The space between the items is twice as large as the space at the start and end of the container.
+- space-evenly: This value distributes flex items evenly along the main axis, with equal space between all items, including the start and end of the container.
+
+We also have something called algin-items, which is used to align flex items along the cross axis of the flex container (like the justify-content, where it uses the main axis). The align-items property can take the following values:
+- stretch (default): This value stretches flex items to fill the container along the cross axis. If the flex items do not have a specified height (for row direction) or width (for column direction), they will stretch to fill the container.
+- flex-start: This value aligns flex items to the start of the cross axis. If the flex-direction is row, the items will be aligned to the top; if the flex-direction is column, the items will be aligned to the left.
+- flex-end: This value aligns flex items to the end of the cross axis. If the flex-direction is row, the items will be aligned to the bottom; if the flex-direction is column, the items will be aligned to the right.
+- center: This value centers flex items along the cross axis. If the flex-direction is row, the items will be centered vertically; if the flex-direction is column, the items will be centered horizontally.
+- baseline: This value aligns flex items along their baseline. If the flex items have different heights, they will be aligned based on their text baseline.
+
+Keep in mind that in order to use the align-items property, the flex container must have a defined height (for row direction) or width (for column direction). If the container does not have a defined height or width, the align-items property will not have any effect.
+
+Finally, we have the align-content property, which is used to align flex lines when there are multiple lines of flex items (when flex-wrap is set to wrap or wrap-reverse). The align-content property can take the following values:
+- stretch (default): This value stretches the flex lines to fill the container along the cross axis. If the flex lines do not have a specified height (for row direction) or width (for column direction), they will stretch to fill the container.
+- flex-start: This value aligns the flex lines to the start of the cross axis. If the flex-direction is row, the lines will be aligned to the top; if the flex-direction is column, the lines will be aligned to the left.
+- flex-end: This value aligns the flex lines to the end of the cross axis. If the flex-direction is row, the lines will be aligned to the bottom; if the flex-direction is column, the lines will be aligned to the right.
+- center: This value centers the flex lines along the cross axis. If the flex-direction is row, the lines will be centered vertically; if the flex-direction is column, the lines will be centered horizontally.
+- space-between: This value distributes the flex lines evenly along the cross axis, with the first line at the start and the last line at the end. The remaining space between the lines is distributed evenly.
+- space-around: This value distributes the flex lines evenly along the cross axis, with equal space around each line. The space between the lines is twice as large as the space at the start and end of the container.
+- space-evenly: This value distributes the flex lines evenly along the cross axis, with equal space between all lines, including the start and end of the container.
+
+
+A great tip in case that we want one item (not the parent container) to have a different alignment than the other items is to use the align-self property. The align-self property allows us to override the align-items property for a specific flex item.
+The align-self property can take the same values as align-items (stretch, flex-start, flex-end, center, baseline) and it will only affect the specific flex item it is applied to. 
+For example, if we have a flex container with align-items set to center, but we want one specific item to be aligned to the start of the cross axis, we can set align-self: 
+flex-start; on that item. This will override the align-items property for that item and it will be aligned to the start of the cross axis while the other items will still be centered.
+
+As we can see, we have a lot of properties to remember, so in this case, we can always consult the internet for a quick reference or check a cheat sheet to help us remember the different properties and their values:
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+Another tip is that align-content property only works when we set the flex-wrap property to wrap or wrap-reverse, otherwise, it will not have any effect since there will be only one line of flex items.
+
+
+FLEX SIZING
+How to size flex items? We have three properties that we can use to control the size of flex items: flex-grow, flex-shrink, and flex-basis. These properties work together to determine how flex items grow, shrink, and take up space within a flex container.
+
+The flex-grow property defines the ability of a flex item to grow relative to the other flex items in the container. It takes a unitless value that represents the proportion of available space that the flex item should take up. 
+For example, if we have three flex items with flex-grow values of 1, 2, and 3, the first item will take up 1 part of the available space, the second item will take up 2 parts, and the third item will take up 3 parts.
+
+The flex-shrink property defines the ability of a flex item to shrink relative to the other flex items in the container when there is not enough space. It also takes a unitless value that represents the proportion of space that the flex item should give up when the container is too small. 
+For example, if we have three flex items with flex-shrink values of 1, 2, and 3, the first item will give up 1 part of its space, the second item will give up 2 parts, and the third item will give up 3 parts when the container is too small.
+
+The flex-basis property defines the initial size of a flex item before any available space is distributed according to the flex-grow and flex-shrink properties. It can take values such as auto, which means the size of the item is based on its content, or specific length values like pixels, percentages, etc. 
+The flex-basis property is used to set the initial size of a flex item before it starts to grow or shrink based on the available space in the container. 
+
+Flexbox uses an algorithm to determine the size of each flex item based on the flex-grow, flex-shrink, and flex-basis properties. The algorithm works as follows:
+1. The browser calculates the initial size of each flex item based on the flex-basis property. If flex-basis is set to auto, the size of the item is based on its content.
+2. The browser calculates the total size of all flex items and compares it to the available space in the flex container.
+3. If the total size of the flex items is less than the available space, the browser distributes the remaining space according to the flex-grow property. Each flex item grows in proportion to its flex-grow value.
+4. If the total size of the flex items is greater than the available space, the browser reduces the size of the flex items according to the flex-shrink property. Each flex item shrinks in proportion to its flex-shrink value.
+5. The final size of each flex item is determined after the growth and shrinkage calculations are completed.
+
+So, in other words, the algorithm looks like a flowchart: Content width (or height) < Width or height (if set) < Flex-basis (if set) < Available space in the container (min-width/ max-width)
+
+The first thing that the browser would look at is if there is a min-width or max-width set on the flex item, if there is, it will take that into account when calculating the size of the item. 
+If there is no min-width or max-width set, it will look at the flex-basis property to determine the initial size of the item. 
+If flex-basis is set to auto, it will use the content width (or height) of the item as the initial size. 
+Then, it will compare the total size of all flex items to the available space in the container and apply the flex-grow and flex-shrink properties accordingly to determine the final size of each item.
+
+For example, we have a container with different items like the following ones: Home, About, Contact us and The Best Programming Course. As we can see each paragraph has its own length, so if we set the flex-basis to auto, the initial size of each item will be based on its content. 
+The Home item will have a smaller width than the The Best Programming Course item because it has less content.
+
+If we decide to shrik the size of the browser window, all of the items will shrink automatically to the minimum content size. Therefore the Home item will shrink more than the The Best Programming Course item because the word Programming is longer than the word Home and the minimum width will be based on that long word. 
+
+Now, lets say that we set a width on the Flex items of 100px. In this case, the initial size of each item will be 100px regardless of the content inside of it. If we shrink the browser window, all of the items will shrink equally because they all have the same initial size of 100px.
+It will reach a break point (for example the width is less than 400px) and then the items will start to shrink based on the algorithm, that is, the minimum width will be based on the content inside of each item.
+
+Now, lets talk about the flex-basis. If we set a width and a flex-basis on the same item, the flex-basis will take precedence over the width property when calculating the initial size of the flex item. 
+In other words, the flex-basis property will override the width property when determining the initial size of the item. So if we set a width of 100px and a flex-basis of 200px on a flex item, the initial size of that item will be 200px, not 100px. 
+The width property will be ignored in this case because the flex-basis property takes precedence when calculating the initial size of the flex item. 
+
+If we shrink the flex container, the item will have the minimum width based on the content inside of it, but the initial size will be 200px because of the flex-basis property. If we set the flex-basis to auto, then the initial size will be based on the content inside of the item, and if we shrink the container, it will shrink to the minimum width based on the content as well.
+
+
+Finally, we have the max-width and min-width properties. We get the max-width when we have the item in one single line (for example, the Home item) and we get the min-width when we have the item in multiple lines (for example, The Best Programming Course item) which at the same time it has the size of the largest word.
+If we set the max-width property on a flex item, it will limit the maximum size that the item can grow to. Lets say that we set flex-basis to 200px and max-width to 100px. 
+In this case, the initial size of the item will be 100px because the max-width property limits the maximum size that the item can grow to, therefore, the flex-basis value of 200px will be overridden by the max-width value of 100px.
+
+Keep in mind that this can happen because the flex-basis value is larger than the max-width value, so the max-width will take precedence over the flex-basis when calculating the initial size of the item.
+For example, if we set the flex basis to 50px and the max-width to 100px, the initial size of the item will be 50px because the flex-basis value is smaller than the max-width value, so the flex-basis will take precedence over the max-width when calculating the initial size of the item.
+
+Max-width determines the maximum size that a flex item can grow to, on the other hand, min-width determines the minimum size that a flex item can shrink to. If we set a min-width on a flex item, it will prevent the item from shrinking below that specified width.
+For example, if we set a min-width of 300px and flex-basis to 200px, the initial size of the item will be 300px because the min-width property prevents the item from shrinking below that specified width, therefore, the flex-basis value of 200px will be overridden by the min-width value of 300px.
+If we set a min-width of 100px and flex-basis to 200px, the initial size of the item will be 200px because the flex-basis value is larger than the min-width value, so the flex-basis will take precedence over the min-width when calculating the initial size of the item.
+
+Also, if we shrink the container, the item will not shrink below the min-width value of 300px, even if the available space in the container is less than 300px. This is because the min-width property prevents the item from shrinking below that specified width, ensuring that it maintains a minimum size regardless of the available space in the container.
+
+With all of this information, we can now understand the flex-grow and flex-shrink properties better. 
+The flex-grow property allows a flex item to grow and take up available space in the container, while the flex-shrink property allows a flex item to shrink and give up space when the container is too small.
+
+For example, if we set the flex-grow and flex-shrink properties to 1 on all flex items, they will grow and shrink equally based on the available space in the container. 
+If we set the flex-grow property to 0 on a specific item, it will not grow and will only take up the space defined by its flex-basis or content size.
+If we set the flex-shrink property to 0 on a specific item, it will not shrink and will maintain its size that can be defined by its flex-basis or content size, even if the container is too small to accommodate all items. 
+
+Now, if we se the flex-grow to 1 and flex-shrink to 0 and set the flex-basis to 100px on all items, they will grow equally to fill the available space in the container, but they will not shrink below 100px when the container is too small.
+
+If we set the flex-grow to 0 and flex-shrink to 1 and set the flex-basis to 100px on all items, they will not grow to fill the available space in the container and they will be 100px (it respects the flex-basis value, but they will shrink equally when the container is too small, giving up space based on their minimum-width value of the content.
+This behavior is by default when we set a value to flex basis, the flex-grow is set to 0 and the flex-shrink is set to 1.
+
+If we set both of them to 1, the items will grow to fill the available space in the container and they will shrink equally when the container is too small, giving up space based on their minimum-width value of the content, even if we set a flex-basis value, it will be ignored because the flex-grow and flex-shrink properties will take precedence when calculating the size of the items based on the available space in the container.
+
+By default, the flex-basis value is set to auto, it's going to look at the amount of content in each of the items, so it;s going to give more flex-basis to the item with more content and less flex-basis to the item with less content. 
+If we set a specific value to the flex-basis property, it will override the auto value and it will be used as the initial size of the items before any available space is distributed according to the flex-grow and flex-shrink properties.
+Now, we can also, set the flex-basis to 0, which means that the initial size of the items will be 0 and all of the available space in the container will be distributed according to the flex-grow property.
+This can be useful when we want all items to grow equally regardless of their content size, as the initial size of all items will be the same (0) and the available space will be distributed based on the flex-grow values.
+
+To conclude this section, we can always use the shorthand property flex, which is a convenient way to set the flex-grow, flex-shrink, and flex-basis properties in a single declaration. The syntax for the flex shorthand property is as follows:
+flex: [flex-grow] [flex-shrink] [flex-basis];
+For example, if we want to set flex-grow to 1, flex-shrink to 0, and flex-basis to 100px on a flex item, we can use the following shorthand declaration:
+.item {
+  flex: 1 0 100px;
+}
+This is equivalent to writing:
+.item {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 100px;
+} 
+
+There is also another way to shorthand the flex property, which is to set only the flex-grow value and let the other two properties take their default values. For example:
+.item {
+  flex: 1;
+}
+This is equivalent to writing:
+.item {
+  flex-grow: 1;
+  flex-shrink: 1; 
+  flex-basis: 0;  
+}
+
+Keep in mind that we can also change that value for example, we can set flex to 2 or 3 to make the item grow more than the other items in the container. 
+For example, if we have three items with flex values of 1, 2, and 3, the first item will take up 1 part of the available space, the second item will take up 2 parts, and the third item will take up 3 parts of the available space in the container.
+*/
